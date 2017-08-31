@@ -13,4 +13,5 @@ $plex_requests_addr = "https://openshift.eul.sncf.fr"; // plex requests adress ,
 //if plex is mapped to a specific domain ,user port 80
 //if not, just specify your port set up for external access
 $server_port = ""; //default plex port: 32400
+$copyright = "Service Team e.SNCF"
 ?>
