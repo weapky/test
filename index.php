@@ -1,7 +1,3 @@
-<?php
-//configuration
-include("inc/dash_config.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,10 +50,10 @@ include("inc/dash_config.php");
 
         function checkServer() {
             var p = new Ping();
-            var server = <?php echo $server_ip;?> 
+            var server = <?php echo "https://openshift.eul.sncf.fr;"?> 
             var timeout = 4000; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
-            p.ping(server+":<?php echo $server_port;?>", function(data) { 
+            p.ping(server, function(data) { 
                 var serverMsg = document.getElementById( "server-status-msg" );
                 var serverImg = document.getElementById( "server-status-img" );
                 if (data < 1000){
@@ -74,7 +70,7 @@ include("inc/dash_config.php");
     </script>
 
 
-    <title><?php echo $servername;?> - Home</title>
+    <title><?php echo "https://openshift.eul.sncf.fr";?> - Home</title>
     <style type="text/css">
 .copyright
 {
@@ -102,7 +98,7 @@ include("inc/dash_config.php");
             <div class="row">
                 <div class="col-lg-6">
                     <h1><br/>
-                    <center><?php echo $servername;?> :</h1></center>
+                    <center><?php echo "https://openshift.eul.sncf.fr";?> :</h1></center>
                     <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Vérification...</h4></center><br/>
                     <br/>
                     <br/>
@@ -126,7 +122,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" ><b><?php echo $servername;?></b></a>
+          <a class="navbar-brand" ><b><?php echo "https://openshift.eul.sncf.fr";?></b></a>
         </div>
         
           </ul>
