@@ -151,7 +151,7 @@ include("inc/dash_config.php");
 	</div><!-- /container -->
 	
 	<p>
-	<p align="center" class="copyright"><?php echo $copyright;?></p>
+	<p align="center" class="copyright"><center><span class='copyright'>Service Team e.SNCF</span></center></p>
 	
   </body>
 </html>

@@ -6,5 +6,5 @@ $srv_requests_addr = "https://openshift.eul.sncf.fr"; // plex requests adress , 
 //server status 
 
 $server_port = ""; 2400
-$copyright = "Service Team e.SNCF"
+//$copyright = "Service Team e.SNCF"
 ?>
