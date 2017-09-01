@@ -58,9 +58,7 @@ include("inc/dash_config.php");
                 var serverImg = document.getElementById( "server-status-img" );
 
                 if (data < 1000){
-                	<?php
-                sleep(5)
-                ?>
+                	
                     serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
