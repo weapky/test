@@ -54,7 +54,7 @@ include("inc/dash_config.php");
 
         function checkServer() {
             var p = new Ping();
-            var server = <?php echo "openshift.eul.sncf.fr";?> 
+            var server = <?php echo $server_address;?> 
             var timeout = 4000; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
             p.ping(server, function(data) { 
