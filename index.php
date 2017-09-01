@@ -74,7 +74,7 @@ include("inc/dash_config.php");
     </script>
 
 
-    <title><?php echo Usine Logiciel;?> - Home</title>
+    <title><?php echo "Usine Logiciel";?> - Home</title>
     <style type="text/css">
 .copyright
 {
@@ -102,7 +102,7 @@ include("inc/dash_config.php");
             <div class="row">
                 <div class="col-lg-6">
                     <h1><br/>
-                    <center><?php echo Usine Logiciel;?> :</h1></center>
+                    <center><?php echo "Usine Logiciel";?> :</h1></center>
                     <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Vérification...</h4></center><br/>
                     <br/>
                     <br/>
@@ -126,7 +126,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" ><b><?php echo Usine Logiciel;?></b></a>
+          <a class="navbar-brand" ><b><?php echo "Usine Logiciel";?></b></a>
         </div>
         
           </ul>
