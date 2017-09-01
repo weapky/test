@@ -52,20 +52,20 @@ include("inc/dash_config.php");
             return this;
         };
 
-        function checkServer() {
+		function checkServer() {
             var p = new Ping();
-            var server = <?php echo $server_address;?> 
+            var server = <?php echo $server_ip;?> 
             var timeout = 4000; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
-            p.ping(server, function(data) { 
+            p.ping(server+":<?php echo $server_port;?>", function(data) { 
                 var serverMsg = document.getElementById( "server-status-msg" );
                 var serverImg = document.getElementById( "server-status-img" );
                 if (data < 1000){
-                    serverMsg.innerHTML ='Accès OK !';
+                    serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
                 }else{
-                    serverMsg.innerHTML = 'Actuellement en maintenance';
+                    serverMsg.innerHTML = 'Down and unreachable';
                     serverImg.src = "assets/img/ipad-hand-off.png";
                 }
             }, timeout);
