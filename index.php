@@ -102,7 +102,7 @@ include("inc/dash_config.php");
             <div class="row">
                 <div class="col-lg-6">
                     <h1><br/>
-                    <center><?php echo $servername;?> Status:</h1></center>
+                    <center><?php echo $servername;?> :</h1></center>
                     <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Vérification...</h4></center><br/>
                     <br/>
                     <br/>
