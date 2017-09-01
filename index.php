@@ -51,13 +51,14 @@ include("inc/dash_config.php");
         function checkServer() {
             var p = new Ping();
             var server = 'openshift.eul.sncf.fr' 
-            var timeout = 10; //Milliseconds
+            var timeout = 100; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
             p.ping(server+":<?php echo $server_port;?>", function(data) { 
                 var serverMsg = document.getElementById( "server-status-msg" );
                 var serverImg = document.getElementById( "server-status-img" );
+                var sleep(5)
                 if (data < 1000){
-                    serverMsg.innerHTML ='Up and reachable';
+                    serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
                 }else{
