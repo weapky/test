@@ -55,12 +55,12 @@ include("inc/dash_config.php");
 		function checkServer() {
             var p = new Ping();
             var server = <?php echo $server_ip;?> 
-            var timeout = 4000; //Milliseconds
+            var timeout = 100; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
             p.ping(server+":<?php echo $server_port;?>", function(data) { 
                 var serverMsg = document.getElementById( "server-status-msg" );
                 var serverImg = document.getElementById( "server-status-img" );
-                if (data < 1000){
+                if (data < 0){
                     serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
