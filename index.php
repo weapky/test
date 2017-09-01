@@ -124,7 +124,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" href="<?php echo $home_www_addr;?>"><b><?php echo $servername;?></b></a>
+          <a class="navbar-brand" ><b><?php echo $servername;?></b></a>
         </div>
         
           </ul>
