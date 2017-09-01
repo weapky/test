@@ -56,7 +56,9 @@ include("inc/dash_config.php");
             p.ping(server+":<?php echo $server_port;?>", function(data) { 
                 var serverMsg = document.getElementById( "server-status-msg" );
                 var serverImg = document.getElementById( "server-status-img" );
-                var sleep(5)
+                <?php
+                sleep(5)
+                ?>
                 if (data < 1000){
                     serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
