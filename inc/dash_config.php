@@ -6,6 +6,6 @@ $srv_requests_addr = "https://openshift.eul.sncf.fr"; //  requests adress , youj
 $server_ip = "https://openshift.eul.sncf.fr"
 //server status 
 
-$server_port = ""; 2400
+$server_port = "80"; 2400
 //$copyright = "Service Team e.SNCF"
 ?>
