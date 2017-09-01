@@ -59,7 +59,7 @@ include("inc/dash_config.php");
 
                 if (data < 1000){
 
-                    serverMsg.innerHTML ='Accès Usine Logiciel OK !';
+                    serverMsg.innerHTML ='Accès Usine Logicielle OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
                 }else{
@@ -124,7 +124,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" ><b><?php echo $servername;?></b></a>
+          <a class="navbar-brand" 	><b><?php echo $servername;?></b></a>
         </div>
         
           </ul>
