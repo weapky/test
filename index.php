@@ -58,7 +58,7 @@ include("inc/dash_config.php");
                 var serverImg = document.getElementById( "server-status-img" );
 
                 if (data < 1000){
-                	
+
                     serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
@@ -72,7 +72,7 @@ include("inc/dash_config.php");
     </script>
 
 
-    <title><?php echo $servername;?> - Dashboard</title>
+    <title><?php echo $servername;?> - Check status</title>
     <style type="text/css">
 .copyright
 {
