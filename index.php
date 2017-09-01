@@ -5,7 +5,7 @@ include("inc/dash_config.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" type="image/x-icon" href="landing.ico" />`
+    <link rel="shortcut icon" type="image/x-icon" href="plexlanding.ico" />`
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,6 @@ include("inc/dash_config.php");
         body.offline #link-bar {
             display:none;
         }
-
         body.online  #link-bar{
             display:block;
         }
@@ -29,7 +28,6 @@ include("inc/dash_config.php");
                 return (-1 < this.className.indexOf(className));
             }
         };
-
         HTMLElement.prototype.addClass = function (className) {
             if (this.classList) {
                 this.classList.add(className);
@@ -40,7 +38,6 @@ include("inc/dash_config.php");
             }
             return this;
         };
-
         HTMLElement.prototype.removeClass = function (className) {
             if (this.classList) {
                 this.classList.remove(className);
@@ -51,30 +48,29 @@ include("inc/dash_config.php");
             }
             return this;
         };
-
-		function checkServer() {
+        function checkServer() {
             var p = new Ping();
             var server = <?php echo $server_ip;?> 
-            var timeout = 100; //Milliseconds
+            var timeout = 4000; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
-///            p.ping(server+":<?php echo $server_port;?>", function(data) { 
-///                var serverMsg = document.getElementById( "server-status-msg" );
-///                var serverImg = document.getElementById( "server-status-img" );
-                if (data < 10){
-                    serverMsg.innerHTML ='Accès Usine Logiciel OK !';
+            p.ping(server+":<?php echo $server_port;?>", function(data) { 
+                var serverMsg = document.getElementById( "server-status-msg" );
+                var serverImg = document.getElementById( "server-status-img" );
+                if (data < 1000){
+                    serverMsg.innerHTML ='Up and reachable';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
                 }else{
                     serverMsg.innerHTML = 'Down and unreachable';
                     serverImg.src = "assets/img/ipad-hand-off.png";
                 }
-            },;
+            }, timeout);
         }
 		
     </script>
 
 
-    <title><?php echo "Usine Logiciel";?> - Home</title>
+    <title><?php echo $servername;?> - Dashboard</title>
     <style type="text/css">
 .copyright
 {
@@ -102,8 +98,8 @@ include("inc/dash_config.php");
             <div class="row">
                 <div class="col-lg-6">
                     <h1><br/>
-                    <center><?php echo "Usine Logiciel";?> :</h1></center>
-                    <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Vérification...</h4></center><br/>
+                    <center><?php echo $servername;?> Status:</h1></center>
+                    <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Checking...</h4></center><br/>
                     <br/>
                     <br/>
                     <form class="form-inline" role="form">
@@ -126,7 +122,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" ><b><?php echo "Usine Logiciel";?></b></a>
+          <a class="navbar-brand" href="<?php echo $home_www_addr;?>"><b><?php echo $servername;?></b></a>
         </div>
         
           </ul>
@@ -143,7 +139,66 @@ include("inc/dash_config.php");
 		
 		<div class="row mt centered">
 
+        <?php 
+        if($enable_movies == TRUE)
+        {
+            include "inc/recent_movies.php";
+        }
+         
+        if($enable_tvshows == TRUE)
+        {
+            include "inc/recent_shows.php";
+        }
+        
+        if($enable_added == TRUE)
+        {
+            include("inc/get_recently_added.php");
+        }
+        ?>
+		 <br/>
+			<div class="col-lg-4">
+				<a href="<?php echo $server_address;?>" target="_blank">
+				<img src="assets/img/s01.png" width="180" alt="">
+				<h4>Access <?php echo $servername;?> here.</h4>
+				<p><?php echo $plex_description;?><p>
+					</a>
+			</div><!--/col-lg-4 -->
 
+			<div class="col-lg-4">
+				<a href="<?php echo $plex_requests_addr;?>" target="_blank">
+				<img src="assets/img/s02.png" width="180" alt="">
+				<h4>Request</h4>
+				<p>Want to watch a Movie or TV Show but it's not currently on <?php echo $servername;?>? Request it here!</p>
+</a>
+			</div><!--/col-lg-4 -->
+
+			<div class="col-lg-4">
+				
+				<img src="assets/img/s03.png" width="180" alt="">
+				<h4>New - <a href="<?php echo $plex_recently_addr_music;?>" target="_blank">Music</a> | <a href="<?php echo $plex_recently_addr_movies;?>" target="_blank">Movies</a></h4>
+				<p>See what has been recently added to <?php echo $servername;?> without having to log in.</p>
+</a>
+			</div><!--/col-lg-4 -->
+						<div class="col-lg-4">
+				<a href="<?php echo $plexpy_addr;?>" target="_blank">
+				<img src="assets/img/s04.png" width="180" alt="">
+				<h4>Monitoring</h4>
+				<p>Monitor all ongoing and outgoing traffic on <?php echo $servername;?> using this tool.</p>
+</a>
+			</div><!--/col-lg-4 -->
+			<div class="col-lg-4">
+				<a href="<?php echo $plexdb_addr;?>" target="_blank">
+				<img src="assets/img/s05.png" width="180" alt="">
+				<h4>Media Library</h4>
+				<p>Check all the available media on <?php echo $servername;?> without having to login.</p>
+</a>
+			</div><!--/col-lg-4 -->
+			<div class="col-lg-4">
+				<a href="mailto:<?php echo $user_mail;?>" target="_top">
+				<img src="assets/img/s06.png" width="180" alt="">
+				<h4>Request Access</h4>
+				<p>Send me an email with your plex username and daily use at <a href="mailto:<?php echo $user_mail;?>"/><?php echo $user_mail;?></a></p>
+</a>
 			</div><!--/col-lg-4 -->
 				
 		</div><!-- /row -->
