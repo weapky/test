@@ -5,7 +5,7 @@ include("inc/dash_config.php");
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="shortcut icon" type="image/x-icon" href="plexlanding.ico" />`
+    <link rel="shortcut icon" type="image/x-icon" href="landing.ico" />`
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
