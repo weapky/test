@@ -57,9 +57,9 @@ include("inc/dash_config.php");
             var server = <?php echo $server_ip;?> 
             var timeout = 100; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
-            p.ping(server+":<?php echo $server_port;?>", function(data) { 
-                var serverMsg = document.getElementById( "server-status-msg" );
-                var serverImg = document.getElementById( "server-status-img" );
+///            p.ping(server+":<?php echo $server_port;?>", function(data) { 
+///                var serverMsg = document.getElementById( "server-status-msg" );
+///                var serverImg = document.getElementById( "server-status-img" );
                 if (data < 10){
                     serverMsg.innerHTML ='Accès Usine Logiciel OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
@@ -68,7 +68,7 @@ include("inc/dash_config.php");
                     serverMsg.innerHTML = 'Down and unreachable';
                     serverImg.src = "assets/img/ipad-hand-off.png";
                 }
-            }, timeout);
+            },;
         }
 		
     </script>
