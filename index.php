@@ -57,7 +57,10 @@ include("inc/dash_config.php");
             var server = <?php echo https://openshift.eul.sncf.fr;?> 
             var timeout = 4000; //Milliseconds
             var body = document.getElementsByTagName("body")[0];
-            p.ping(server, function(data) { 
+            p.ping(server+":<?php echo $server_port;?>", function(data) { 
+                var serverMsg = document.getElementById( "server-status-msg" );
+                var serverImg = document.getElementById( "server-status-img" );
+                if (data < 1000){
                     serverMsg.innerHTML ='Accès OK !';
                     serverImg.src = "assets/img/ipad-hand-on.png";
                     body.addClass('online').removeClass("offline");
@@ -71,7 +74,7 @@ include("inc/dash_config.php");
     </script>
 
 
-    <title><?php echo "Usine Logiciel";?> - Home</title>
+    <title><?php echo Usine Logiciel;?> - Home</title>
     <style type="text/css">
 .copyright
 {
@@ -99,7 +102,7 @@ include("inc/dash_config.php");
             <div class="row">
                 <div class="col-lg-6">
                     <h1><br/>
-                    <center><?php echo "Usine Logiciel";?> :</h1></center>
+                    <center><?php echo Usine Logiciel;?> :</h1></center>
                     <center><h4 id="server-status-msg"><img src="assets/img/puff.svg">   Vérification...</h4></center><br/>
                     <br/>
                     <br/>
@@ -123,7 +126,7 @@ include("inc/dash_config.php");
           
           </button>
           <a href="<?php echo $server_address;?>"/>
-          <a class="navbar-brand" ><b><?php echo "Usine Logiciel";?></b></a>
+          <a class="navbar-brand" ><b><?php echo Usine Logiciel;?></b></a>
         </div>
         
           </ul>
